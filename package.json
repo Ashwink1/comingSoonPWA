@@ -24,7 +24,7 @@
     },
     "start-dev": {
       "description": "This script will wun the dev server with default ports",
-      "command": "node server.js",
+      "command": "node dev-server.js",
       "env": {
         "NODE_ENV": "development",
         "PORT": 8000,
