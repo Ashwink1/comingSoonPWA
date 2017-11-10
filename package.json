@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
     "watch": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-webpack-server": "webpack-dev-server --open",
-    "start": "npm i && concurrently --kill-others \"better-npm-run start-dev\""
+    "start": "npm i && concurrently --kill-others \"better-npm-run start-dev\"",
+    "build": "webpack --config webpack.prod.js"
   },
   "betterScripts": {
     "start-local": {
