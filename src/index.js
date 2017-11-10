@@ -5,7 +5,7 @@ function component() {
   var element = document.createElement('div');
 
   // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  element.innerHTML = _.join(['Hello', 'Changes it and test'], ' ');
   element.classList.add('hello');
   // Add the image to our existing div.
   var myIcon = new Image();
