@@ -1,12 +1,12 @@
 import _ from 'lodash';
-import './style.css';
+import styles from './style.css';
 import Icon from './icon.jpg';
 function component() {
   var element = document.createElement('div');
 
   // Lodash, now imported by this script
   element.innerHTML = _.join(['Hello', 'coming  back'], ' ');
-  element.classList.add('hello');
+  element.classList.add(styles['hello']);
   // Add the image to our existing div.
   var myIcon = new Image();
   myIcon.src = Icon;

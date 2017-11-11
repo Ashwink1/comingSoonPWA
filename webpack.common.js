@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');//Html creation plugin
 const CleanWebpackPlugin = require('clean-webpack-plugin');//clean up dist
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -24,22 +25,74 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(md|ttf|txt|eot|ico|otf|svg|png|gif|jpg|woff2|woff|jpeg(2)?)(\?[a-z0-9]+)?$/,
+                exclude: /node_modules/,
+                use: [
+                    { loader: 'file-loader' },
+                ],
+            },
+            {
+                test: /\.html$/,
+                loader: 'url-loader',
+                exclude: [/node_modules/, /index.html/],
+            },
+            {
                 test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
+                include: [
+                    path.resolve(__dirname, './src'),
                 ],
+                exclude: [/node_modules/, /global.css/, /flaticon.css/, /iconmoon.css/],
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                modules: true,
+                                minimize: process.env.NODE_ENV === 'production',
+                                sourceMap: true,
+                                importLoaders: 1,
+                                localIdentName: '[name]__[local]___[hash:base64:5]',
+                            },
+                        },
+                        {
+                            loader: require.resolve('postcss-loader'),
+                            options: {
+                                ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
+                                plugins: () => [
+                                    require('postcss-flexbugs-fixes'), // eslint-disable-line,
+                                    require('precss'), // for loading scss coverted to css.
+                                ],
+                            },
+                        },
+                    ],
+                }),
             },
             {
-                test: /\.(png|svg|jpg|gif)$/,
-                use: [
-                    'file-loader',
+                test: [/global.css/, /flaticon.css/, /iconmoon.css/],
+                exclude: [/node_modules/],
+                include: [
+                    path.resolve(__dirname, './src'),
                 ],
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                minimize: process.env.NODE_ENV === 'production',
+                            },
+                        },
+                        'postcss-loader',
+                    ],
+                }),
             },
             {
-                test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: [
-                    'file-loader',
+                test: /\.js/,
+                exclude: [/node_modules/, /\.test\.js/],
+                loader: 'babel-loader',
+                include: [
+                    path.resolve(__dirname, './src'),
                 ],
             },
         ],
