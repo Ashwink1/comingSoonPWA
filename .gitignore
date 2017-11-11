@@ -52,3 +52,5 @@ fabric.properties
 
 bigbrain-ui.iml
 npm-debug.log
+dist/
+.idea/workspace.xml
