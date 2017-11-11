@@ -18,6 +18,8 @@ module.exports = {
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ],
+    target: 'web',
+    cache: true,
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
