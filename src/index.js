@@ -1,20 +1,8 @@
-import _ from 'lodash';
-import styles from './style.css';
-import Icon from './icon.jpg';
-function component() {
-  var element = document.createElement('div');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'coming  back'], ' ');
-  element.classList.add(styles['hello']);
-  // Add the image to our existing div.
-  var myIcon = new Image();
-  myIcon.src = Icon;
-
-  element.appendChild(myIcon);
-
-
-  return element;
-}
-
-document.body.appendChild(component());
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
