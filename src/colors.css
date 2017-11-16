@@ -1,0 +1,41 @@
+/* ::: ADD THE GOLBAL VARIALBES HERE ::: */
+
+/*
+    Example :
+
+    --primaryColor: red;            // define
+
+    color: var(--primaryColor);     // usage
+
+*/
+
+:root {
+
+  /* Base theme colors */
+
+  --primaryColorDark: #00a186;
+
+  --secondaryColor: #33495f;
+  --secondaryColorDark: #2c3e50;
+
+  --primaryTextColorLight: #666666;
+
+  --textColorLight: #ffffff;
+  --textColorDark: #000000;
+  --textColorGrey: #808080;
+
+  /* Other colors */
+  --colorBlack: #000000;
+  --colorWhite: #ffffff;
+  --colorRed: #e54545;
+  --colorGreen: #00b034;
+  --colorCaribbeanGreen: #00b38e;
+  --colorLightGrey: #dbdbdb;
+  --colorGrey: #e7e7e7;
+
+
+  --primaryColor: #50e3c2;
+  --primaryTextColor: #212121;
+  --secondaryColor: #9a9a9a;
+
+}

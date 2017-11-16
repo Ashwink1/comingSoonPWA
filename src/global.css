@@ -1,0 +1,244 @@
+@import './colors.css';
+
+/* ::: RESET STYLES STARTS ::: */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fill-screen{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--textColorLight);
+  color: var(--textColorDark);
+  font-size: 14px;
+  font-weight: 400;
+  overflow: auto;
+}
+
+a,
+button,
+input, textarea {
+  outline: none;
+  border: 0;
+  background: none;
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+/* ::: RESET STYLES ENDS ::: */
+
+/* ::: COMMONLY USED CLASSES STARTS ::: */
+
+.fleft {
+  float: left;
+}
+
+.fright {
+  float: right;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  visibility: hidden;
+  max-height: 0;
+  opacity: 0;
+  clear: both;
+}
+
+.hide {
+  display: none !important;
+}
+
+.text-ellipsis {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.color-green {
+  color: var(--colorGreen);
+}
+
+.text-capitalized {
+  text-transform: capitalize;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-ellipsis {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-prevent-break {
+  white-space: nowrap;
+}
+
+.margin-right-20 {
+  margin-right: 20px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+.padding-lr-25 {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.padding-t-25 {
+  padding-top: 25px;
+}
+
+.display-block {
+  display: block;
+}
+
+.width-height-100per {
+  width: 100%;
+  height: 100%;
+}
+
+.height-100p {
+  height: 100%;
+}
+
+.opacity-0_5 {
+  opacity: 0.5;
+}
+
+.border-none {
+  border: none !important;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.border-none {
+  border: none !important;
+}
+
+.display-none {
+  display: none;
+}
+
+.inert {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* ::: COMMONLY USED CLASSES ENDS ::: */
+
+/* ::: CLASSES FOR TESTING STARTS ::: */
+
+.background-test {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* ::: CLASSES FOR TESTING  ENDS ::: */
+
+/* ::: FLATICON CLASSES STARTS HERE ::: */
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  margin-left: 0;
+}
+
+/* ::: FLATICON CLASSES ENDS HERE ::: */
+
+/* ::: TYPOGRAPHY ROBOTO STARTS HERE ::: */
+
+
+/* ::: TYPOGRAPHY ROBOTO ENDS HERE ::: */
+
+/* ::: CLASSES SPECIFICALLY FOR BIG BRAIN ::: */
+
+/* don't change this class */
+.layoutWrapper {
+  padding: 8px 40px;
+}
+
+.noSelect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.fRight {
+  float: right;
+}
+
+.layoutWrapper {
+  padding: 0 30px;
+}
+
+.disable {
+  pointer-events: none;
+}
